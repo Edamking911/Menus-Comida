@@ -18,7 +18,7 @@
             text-align: center;
             overflow-x: hidden;
             min-height: 100vh;
-            position: relative; /* Necesario para posicionar el logo */
+            position: relative; 
         }
 
         @keyframes gradientBG {
@@ -48,30 +48,29 @@
             100% { transform: translateY(0) rotate(0deg) scale(1); }
         }
 
-        /* EL LOGO EN LA ESQUINA IZQUIERDA */
+        /* EL LOGO ARREGLADO (Más arriba y pequeño) */
         .logo-img {
-            position: absolute; /* Lo saca del centro y lo posiciona libremente */
-            top: 15px; /* Distancia desde arriba */
-            left: 15px; /* Distancia desde la izquierda */
-            width: 100px; /* Tamaño del logo (cámbialo si lo quieres más grande) */
+            position: absolute; 
+            top: 5px; /* Lo subimos más */
+            left: 10px; 
+            width: 75px; /* Más pequeño para que no estorbe */
             height: auto;
-            z-index: 10; /* Se asegura de estar por encima del fondo */
+            z-index: 10; 
             filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.8)); 
             animation: flotarLogo 4s ease-in-out infinite;
         }
 
         @keyframes flotarLogo {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-5px); }
             100% { transform: translateY(0px); }
         }
 
-        /* Contenedor principal */
         .container {
             position: relative;
             z-index: 1;
             padding: 20px;
-            padding-top: 80px; /* Le damos espacio arriba para que el logo no tape el título */
+            padding-top: 60px; /* Ajustado para que el título no choque con el logo */
             max-width: 800px;
             margin: 0 auto;
         }
@@ -83,7 +82,6 @@
             text-shadow: 3px 3px 0px #d32f2f, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
             margin: 10px 0 20px 0;
             letter-spacing: 2px;
-            text-align: center; /* El título sigue centrado */
         }
 
         .menu-wrapper {
@@ -135,14 +133,12 @@
 </head>
 <body>
 
-    <!-- Emojis flotando -->
     <div class="floating-food f1">🍔</div>
     <div class="floating-food f2">🌭</div>
     <div class="floating-food f3">🍟</div>
     <div class="floating-food f4">🥤</div>
     <div class="floating-food f5">🍗</div>
 
-    <!-- EL LOGO EN LA ESQUINA -->
     <img src="logo_rojo.png" alt="Logo D'Todo" class="logo-img">
 
     <div class="container">
@@ -153,7 +149,8 @@
             <img src="menu de todo_page-0001.jpg" alt="Menú Visual D'Todo" class="menu-img">
         </div>
 
-        <a href="menu.pdf" download="Menu_DTodo.pdf" class="btn-descarga">Descargar Menú en PDF</a>
+        <!-- AQUÍ ESTÁ EL TRUCO: Se quitó el "download" y se puso target="_blank" -->
+        <a href="menu de todo.pdf" target="_blank" class="btn-descarga">📥 Abrir / Descargar Menú</a>
     </div>
 
 </body>
