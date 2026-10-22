@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú D'Todo | ¡Pide Ya!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #3a0000, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative; /* Necesario para posicionar el logo */
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Emojis flotando de fondo */
+        .floating-food {
+            position: fixed;
+            font-size: 50px;
+            opacity: 0.1; 
+            animation: float 12s infinite ease-in-out;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .f1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .f2 { top: 25%; right: 10%; animation-delay: 2s; }
+        .f3 { bottom: 20%; left: 15%; animation-delay: 4s; }
+        .f4 { bottom: 10%; right: 5%; animation-delay: 1s; }
+        .f5 { top: 50%; left: 50%; animation-delay: 3s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) rotate(15deg) scale(1.1); }
+            100% { transform: translateY(0) rotate(0deg) scale(1); }
+        }
+
+        /* EL LOGO EN LA ESQUINA IZQUIERDA */
+        .logo-img {
+            position: absolute; /* Lo saca del centro y lo posiciona libremente */
+            top: 15px; /* Distancia desde arriba */
+            left: 15px; /* Distancia desde la izquierda */
+            width: 100px; /* Tamaño del logo (cámbialo si lo quieres más grande) */
+            height: auto;
+            z-index: 10; /* Se asegura de estar por encima del fondo */
+            filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.8)); 
+            animation: flotarLogo 4s ease-in-out infinite;
+        }
+
+        @keyframes flotarLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Contenedor principal */
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            padding-top: 80px; /* Le damos espacio arriba para que el logo no tape el título */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .titulo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: #ffcc00;
+            text-shadow: 3px 3px 0px #d32f2f, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin: 10px 0 20px 0;
+            letter-spacing: 2px;
+            text-align: center; /* El título sigue centrado */
+        }
+
+        .menu-wrapper {
+            animation: slideUpFade 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 15px 30px rgba(0,0,0,0.7);
+            border: 4px solid #ffcc00;
+        }
+
+        .btn-descarga {
+            display: inline-block;
+            margin: 30px 0 50px 0;
+            padding: 18px 40px;
+            background-color: #d32f2f;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(211, 47, 47, 0.4);
+            transition: all 0.3s ease;
+            animation: pulseButton 2s infinite;
+            border: 2px solid #ffcc00;
+        }
+
+        .btn-descarga:hover {
+            transform: scale(1.05) translateY(-5px);
+            background-color: #b71c1c;
+            box-shadow: 0 15px 25px rgba(211, 47, 47, 0.6);
+        }
+
+        @keyframes slideUpFade {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseButton {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(211, 47, 47, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Emojis flotando -->
+    <div class="floating-food f1">🍔</div>
+    <div class="floating-food f2">🌭</div>
+    <div class="floating-food f3">🍟</div>
+    <div class="floating-food f4">🥤</div>
+    <div class="floating-food f5">🍗</div>
+
+    <!-- EL LOGO EN LA ESQUINA -->
+    <img src="logo_rojo.png" alt="Logo D'Todo" class="logo-img">
+
+    <div class="container">
+        
+        <h1 class="titulo">Menú D'Todo</h1>
+        
+        <div class="menu-wrapper">
+            <img src="menu de todo_page-0001.jpg" alt="Menú Visual D'Todo" class="menu-img">
+        </div>
+
+        <a href="menu.pdf" download="Menu_DTodo.pdf" class="btn-descarga">Descargar Menú en PDF</a>
+    </div>
+
+</body>
+</html>
