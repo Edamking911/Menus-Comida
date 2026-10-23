@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú D'Todo | ¡Pide Ya!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
         body {
             margin: 0;
@@ -48,12 +48,11 @@
             100% { transform: translateY(0) rotate(0deg) scale(1); }
         }
 
-        /* EL LOGO ARREGLADO (Más arriba y pequeño) */
+        /* LOGO CENTRADO Y MÁS GRANDE */
         .logo-img {
-            position: absolute; 
-            top: 5px; /* Lo subimos más */
-            left: 10px; 
-            width: 75px; /* Más pequeño para que no estorbe */
+            display: block; 
+            margin: 20px auto 15px auto; /* Lo centra automáticamente */
+            width: 140px; /* Lo hice un poquito más grande para que resalte */
             height: auto;
             z-index: 10; 
             filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.8)); 
@@ -62,26 +61,16 @@
 
         @keyframes flotarLogo {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
 
         .container {
             position: relative;
             z-index: 1;
-            padding: 20px;
-            padding-top: 60px; /* Ajustado para que el título no choque con el logo */
+            padding: 10px 20px 20px 20px; /* Reduje el espacio de arriba porque ya no hay título */
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        .titulo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.5rem;
-            color: #ffcc00;
-            text-shadow: 3px 3px 0px #d32f2f, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            margin: 10px 0 20px 0;
-            letter-spacing: 2px;
         }
 
         .menu-wrapper {
@@ -139,17 +128,18 @@
     <div class="floating-food f4">🥤</div>
     <div class="floating-food f5">🍗</div>
 
-    <img src="logo_rojo.png" alt="Logo D'Todo" class="logo-img">
-
     <div class="container">
         
-        <h1 class="titulo">Menú D'Todo</h1>
+        <!-- EL LOGO CENTRADO -->
+        <img src="logo_blanco.png" alt="Logo D'Todo" class="logo-img">
+        
+        <!-- EL TÍTULO SE ELIMINÓ -->
         
         <div class="menu-wrapper">
             <img src="menu.jpg" alt="Menú Visual D'Todo" class="menu-img">
         </div>
 
-        <!-- AQUÍ ESTÁ EL TRUCO: Se quitó el "download" y se puso target="_blank" -->
+        <!-- BOTÓN DEL PDF -->
         <a href="menu.pdf" target="_blank" class="btn-descarga">📥 Abrir / Descargar Menú</a>
     </div>
 
